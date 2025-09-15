@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card-bg: 255 255 255;
+  --card-border: 226 232 240;
+}
+
+html,body,#root{height:100%}
+body{ @apply bg-slate-50; }
+.container { @apply max-w-7xl mx-auto; }
+.badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium; }
+.badge-processing { @apply bg-sky-100 text-sky-800; }
+.badge-complete { @apply bg-emerald-100 text-emerald-800; }
+.badge-failed { @apply bg-rose-100 text-rose-800; }
+.badge-queued { @apply bg-amber-100 text-amber-800; }
+.card { @apply rounded-2xl border p-5; border-color: rgb(var(--card-border)); background: rgb(var(--card-bg)); }
+.card-shadow { @apply shadow; }
+.table { @apply w-full text-sm; }
+.table th { @apply text-left text-slate-500 font-medium py-2; }
+.table td { @apply py-2; }
+.kv-label { @apply mr-2 text-slate-500; }
+.kv { @apply mb-1 text-sm; }
+.progress { @apply h-2 w-40 overflow-hidden rounded bg-slate-200; }
+.progress>div { @apply h-full bg-sky-500; }
+
+/* Style presets (class-based) */
+.theme-default .card { @apply shadow; }
+.theme-glass .card { background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.5)); backdrop-filter: blur(8px); border-color: rgba(255,255,255,.4); }
+.theme-neumorph body { background: #ecf0f3; }
+.theme-neumorph .card { background:#ecf0f3; border-color:#ecf0f3; box-shadow: 8px 8px 16px #c8d0d8, -8px -8px 16px #ffffff; }
+.theme-enterprise body { @apply bg-gray-100; }
+.theme-enterprise .card { @apply border-gray-200; background: white; }
+.theme-playful body { background: #fffaf0; }
+.theme-playful .card { border-color:#fde68a; background:#fffbeb; }
+.theme-dark body { @apply bg-slate-950 text-slate-100; }
+.theme-dark .card { background: #0b1220; border-color: #1f2a44; }
